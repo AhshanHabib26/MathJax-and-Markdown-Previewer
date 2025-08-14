@@ -27,7 +27,7 @@ export default function MathToolbar({ onInsert }: ToolbarProps) {
           className="mb-3 p-2 w-xs border rounded bg-gray-800 text-white border-dashed border-gray-500"
         />
       </div>
-      <div className="flex flex-wrap gap-2 max-h-20 overflow-y-auto">
+      <div className="flex flex-wrap gap-2 max-h-20 overflow-y-auto custom-scrollbar">
         {filteredSymbols.map((sym) => (
           <Button
             key={sym.value}

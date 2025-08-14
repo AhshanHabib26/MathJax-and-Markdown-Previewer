@@ -1,32 +1,27 @@
+import { useState } from "react";
+import Container from "@/utils/Container";
 import MarkdownEditor from "@/components/common/MarkdownEditor";
 import MarkdownMathRenderer from "@/components/common/MarkdownMathRenderer";
-import Container from "@/utils/Container";
-import { useState } from "react";
 
-const Content = () => {
+export default function Content() {
   const [content, setContent] = useState<string>("");
 
   return (
     <Container>
-      <div className=" space-y-5 mt-5">
+      <div className="space-y-3 mt-3">
         {/* Editor */}
         <div className="rounded overflow-hidden">
-          <MarkdownEditor
-            initialContent={content}
-            onChange={(value: string) => setContent(value)}
-          />
+          <MarkdownEditor value={content} onChange={setContent} />
         </div>
 
+        {/* Preview */}
         {content && (
-          <div className="flex-1 border rounded overflow-auto bg-gray-50 p-3">
+          <div className="flex-1 border rounded overflow-auto bg-gray-50 p-2">
             <h2 className="font-semibold mb-2">Preview</h2>
-            {/* Markdown + MathJax */}
             <MarkdownMathRenderer markdown={content} />
           </div>
         )}
       </div>
     </Container>
   );
-};
-
-export default Content;
+}

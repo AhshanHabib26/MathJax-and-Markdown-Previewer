@@ -1,29 +1,42 @@
+import { useRef } from "react";
 import { Textarea } from "@/components/ui/textarea";
-import React, { useState } from "react";
+import MathToolbar from "./MathToolbar";
 
 type Props = {
-  initialContent?: string;
-  onChange?: (content: string) => void;
+  value: string;
+  onChange: (value: string) => void;
 };
 
-export default function MarkdownEditor({
-  initialContent = "",
-  onChange,
-}: Props) {
-  const [markdown, setMarkdown] = useState(initialContent);
+export default function MarkdownEditor({ value, onChange }: Props) {
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMarkdown(e.target.value);
-    if (onChange) onChange(e.target.value);
+  const handleInsert = (symbol: string) => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const newValue = value.substring(0, start) + symbol + value.substring(end);
+    onChange(newValue);
+
+    const cursorPos = start + symbol.length;
+    setTimeout(() => {
+      textarea.selectionStart = textarea.selectionEnd = cursorPos;
+      textarea.focus();
+    }, 0);
   };
 
   return (
-    <Textarea
-      value={markdown}
-      onChange={handleChange}
-      placeholder="Write Markdown here... (Math uses $...$ / $$...$$)"
-      className="text-white p-4 h-[50vh] font-light border-dashed border-gray-500"
-      style={{ fontSize: "18px"}}
-    />
+    <div>
+      <MathToolbar onInsert={handleInsert} />
+      <Textarea
+        ref={textareaRef}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder="Write Markdown here... (Math uses $...$ / $$...$$)"
+        className="text-white p-4 h-[40vh] font-light border-dashed border-gray-500"
+        style={{ fontSize: "18px" }}
+      />
+    </div>
   );
 }

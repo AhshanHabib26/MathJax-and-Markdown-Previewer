@@ -1,8 +1,34 @@
-# Complete MathJax & Markdown Cheatsheet with Examples
+# 📚 Complete MathJax & Markdown Cheatsheet with Examples
 
-This document contains a comprehensive list of common mathematical symbols, formulas, and operations written in **MathJax** and **Markdown**.
+A comprehensive, beginner-to-advanced cheatsheet combining **MathJax** and **Markdown** syntax. This guide covers everything from basic arithmetic to calculus, linear algebra, probability, and more.
+
+Perfect for **students**, **developers**, and **educators** who want to write beautiful math and well-formatted documents effortlessly.
 
 ---
+
+## 📑 Table of Contents
+
+1. [Basic Operations](#1-basic-operations)  
+2. [Power & Roots](#2-power-roots)  
+3. [Equations](#3-equations)  
+4. [Summation & Product](#4-summation--product)  
+5. [Limits, Infinity & Series](#5-limits-infinity--series)  
+6. [Fractions, Subscripts & Superscripts](#6-fractions-subscripts--superscripts)  
+7. [Trigonometry](#7-trigonometry)  
+8. [Exponentials & Logarithms](#8-exponentials--logarithms)  
+9. [Greek Letters & Constants](#9-greek-letters--constants)  
+10. [Set Theory](#10-set-theory)  
+11. [Inequalities & Relations](#11-inequalities--relations)  
+12. [Miscellaneous Symbols](#12-miscellaneous-symbols)  
+13. [Calculus](#13-calculus)  
+14. [Linear Algebra](#14-linear-algebra)  
+15. [Probability & Statistics](#15-probability--statistics)  
+16. [Logic & Boolean Algebra](#16-logic--boolean-algebra)  
+17. [Special Functions](#17-special-functions)  
+
+---
+
+## 📖 Cheatsheet Content
 
 ## 1. Basic Operations
 
@@ -161,3 +187,39 @@ Factorial: $n!$
 Gamma function: $\Gamma(n) = \int_0^\infty t^{n-1} e^{-t} dt$  
 Binomial coefficient: $\binom{n}{k} = \frac{n!}{k!(n-k)!}$
 ```
+
+
+---
+
+## ✨ How to Use
+
+- Copy the code snippets from **Markdown** file.
+- Use **MathJax** or **KaTeX** rendering in your Markdown previewer or [Click Here](https://mathjax-previewer.netlify.app).
+- Works with GitHub Markdown, Obsidian, Jupyter Notebook, and more.
+
+---
+
+## 🌟 Support & Contribute
+
+If you found this project helpful, please consider giving it a **star ⭐** on GitHub!  
+Your support motivates me to keep improving and adding new features.
+
+### 🙌 Ways You Can Help
+- **Star** the repository to show your appreciation.
+- **Follow** me on GitHub for future updates.
+- Share this project with friends, colleagues, or on social media.
+- Report issues or suggest improvements via the **Issues** tab.
+
+---
+
+
+### 📢 Connect with Me
+
+[![GitHub Follow](https://img.shields.io/github/followers/AhshanHabib26?label=Follow&style=social)](https://github.com/AhshanHabib26)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/ahshanhabib26/)  
+[![Facebook](https://img.shields.io/badge/Facebook-Connect-blue?style=flat&logo=facebook)](https://www.facebook.com/AhshanHabib26)
+
+---
+## 📜
+> *"Mathematics is not about numbers, equations, computations, or algorithms: it is about understanding."* – William Paul Thurston  
+---

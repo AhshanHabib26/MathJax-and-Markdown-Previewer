@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { marked } from "marked";
 import { MathJax } from "better-react-mathjax";
 import styles from "@/styles/MarkdownMathRenderer.module.css";
@@ -23,6 +23,12 @@ export default function MarkdownMathRenderer({
 }: MarkdownMathRendererProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const html = marked(markdown);
+
+  useEffect(() => {
+    if (window.MathJax && containerRef.current) {
+      window.MathJax.typesetPromise([containerRef.current]);
+    }
+  }, [markdown]);
 
   return (
     <MathJax>

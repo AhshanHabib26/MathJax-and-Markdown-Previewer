@@ -75,7 +75,7 @@ export default defineConfig({
             },
           },
           {
-            urlPattern: /^.*/i,
+            urlPattern: /^https:\/\/mathjax-previewer\.netlify\.app\/.*$/i,
             handler: "NetworkOnly",
           },
         ],

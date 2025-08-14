@@ -8,7 +8,7 @@ const Content = () => {
 
   return (
     <Container>
-      <div className=" space-y-5">
+      <div className=" space-y-5 mt-5">
         {/* Editor */}
         <div className="rounded overflow-hidden">
           <MarkdownEditor

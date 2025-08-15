@@ -1,14 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from "react";
 import { marked } from "marked";
-import { MathJax } from "better-react-mathjax";
+import { MathJax, MathJaxContext } from "better-react-mathjax";
 import styles from "@/styles/MarkdownMathRenderer.module.css";
-
-declare global {
-  interface Window {
-    MathJax: any;
-  }
-}
 
 type MarkdownMathRendererProps = {
   markdown: string;
@@ -25,18 +18,17 @@ export default function MarkdownMathRenderer({
   const html = marked(markdown);
 
   useEffect(() => {
-    if (window.MathJax && containerRef.current) {
-      window.MathJax.typesetPromise([containerRef.current]);
-    }
   }, [markdown]);
 
   return (
-    <MathJax>
-      <div
-        ref={containerRef}
-        className={styles.markdownContent}
-        dangerouslySetInnerHTML={{ __html: html as unknown as string }}
-      />
-    </MathJax>
+    <MathJaxContext>
+      <MathJax dynamic>
+        <div
+          ref={containerRef}
+          className={styles.markdownContent}
+          dangerouslySetInnerHTML={{ __html: html as string }}
+        />
+      </MathJax>
+    </MathJaxContext>
   );
 }

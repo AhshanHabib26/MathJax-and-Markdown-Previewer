@@ -62,7 +62,7 @@ export default function MathToolbar({
 
   return (
     <div className="mb-3">
-      <div className="flex items-center justify-between mb-2">
+      <div className="flex items-center justify-between mb-3 gap-3">
         <Input
           type="text"
           placeholder="Search symbols..."
@@ -70,7 +70,7 @@ export default function MathToolbar({
           onChange={(e) => setSearch(e.target.value)}
           className="p-2 w-xs border rounded bg-gray-800 text-white border-gray-500"
         />
-        <div className="flex gap-2">
+        <div className="flex gap-1">
           <Button
             onClick={onUndo}
             className="px-2 py-1 bg-gray-700 text-white rounded hover:bg-gray-600"

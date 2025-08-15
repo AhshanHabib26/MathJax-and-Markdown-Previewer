@@ -8,7 +8,7 @@ export const MATH_SYMBOLS = [
   { label: "[ ]", value: "[ ]" },
   { label: "{ }", value: "\\{ \\}" },
 
-  // Operations & relations
+  // Operations & Relations
   { label: "+", value: "+" },
   { label: "-", value: "-" },
   { label: "×", value: "\\times" },
@@ -24,7 +24,7 @@ export const MATH_SYMBOLS = [
   { label: "%", value: "\\%" },
   { label: "mod", value: "\\bmod" },
 
-  // Roots & exponentials
+  // Roots & Exponentials
   { label: "√", value: "\\sqrt{}" },
   { label: "e^x", value: "e^{}" },
 
@@ -34,23 +34,24 @@ export const MATH_SYMBOLS = [
   { label: "x³", value: "x^{3}" },
   { label: "xⁿ", value: "x^{n}" },
   { label: "√x", value: "\\sqrt{x}" },
+  { label: "overline", value: "\\overline{}" },
 
   // Functions
   { label: "f(x)", value: "f(x)" },
 
-  // Exponents & logarithms
+  // Exponents & Logarithms
   { label: "log", value: "\\log" },
   { label: "ln", value: "\\ln" },
 
   // One-variable equations
   { label: "ax+b=0", value: "ax+b=0" },
 
-  // Triangles & angles
+  // Triangles & Angles
   { label: "sin", value: "\\sin" },
   { label: "cos", value: "\\cos" },
   { label: "tan", value: "\\tan" },
 
-  // Proportions & similarity
+  // Proportions & Similarity
   { label: "∼", value: "\\sim" },
 
   // Two-variable linear equations
@@ -59,7 +60,7 @@ export const MATH_SYMBOLS = [
   // Finite sequences
   { label: "a₁, a₂, ..., aₙ", value: "a_1, a_2, \\dots, a_n" },
 
-  // Summation & product
+  // Summation & Product
   { label: "Σ", value: "\\sum" },
   { label: "∏", value: "\\prod" },
 
@@ -83,21 +84,36 @@ export const MATH_SYMBOLS = [
   // Infinity
   { label: "∞", value: "\\infty" },
 
-  // Logic
+  // Logic / Reasoning
   { label: "∧", value: "\\wedge" },
   { label: "∨", value: "\\vee" },
   { label: "¬", value: "\\neg" },
   { label: "⇒", value: "\\implies" },
   { label: "⇔", value: "\\iff" },
+  { label: "∴", value: "\\therefore" },
+  { label: "∵", value: "\\because" },
+  { label: "□", value: "\\square" },
+  { label: "∎", value: "\\blacksquare" },
+  { label: "⊢", value: "\\vdash" },
+  { label: "⊨", value: "\\models" },
+  { label: "⊤", value: "\\top" },
+  { label: "⊥", value: "\\bot" },
 
   // Sets
   { label: "∈", value: "\\in" },
   { label: "⊂", value: "\\subset" },
+  { label: "⊆", value: "\\subseteq" },
+  { label: "⊄", value: "\\nsubset" },
+  { label: "⊃", value: "\\supset" },
+  { label: "⊇", value: "\\supseteq" },
+  { label: "⊅", value: "\\nsupset" },
+  { label: "∉", value: "\\notin" },
+  { label: "∋", value: "\\ni" },
   { label: "∪", value: "\\cup" },
   { label: "∩", value: "\\cap" },
   { label: "∅", value: "\\emptyset" },
 
-  // Greek letters (lowercase)
+  // Greek Letters (Lowercase)
   { label: "α", value: "\\alpha" },
   { label: "β", value: "\\beta" },
   { label: "γ", value: "\\gamma" },
@@ -118,7 +134,7 @@ export const MATH_SYMBOLS = [
   { label: "ψ", value: "\\psi" },
   { label: "ω", value: "\\omega" },
 
-  // Greek letters (uppercase)
+  // Greek Letters (Uppercase)
   { label: "Γ", value: "\\Gamma" },
   { label: "Δ", value: "\\Delta" },
   { label: "Θ", value: "\\Theta" },
@@ -130,18 +146,48 @@ export const MATH_SYMBOLS = [
   { label: "Ψ", value: "\\Psi" },
   { label: "Ω", value: "\\Omega" },
 
-  // Additional: Real numbers
+  // Additional Numbers
   { label: "ℝ", value: "\\mathbb{R}" },
+  { label: "ℕ", value: "\\mathbb{N}" },
+  { label: "ℤ", value: "\\mathbb{Z}" },
+  { label: "ℚ", value: "\\mathbb{Q}" },
+  { label: "ℂ", value: "\\mathbb{C}" },
 
-  // Circles & distance
+  // Circles & Distance
   { label: "radius r", value: "r" },
   { label: "diameter d", value: "d" },
 
-  // Area & perimeter
+  // Area & Perimeter
   { label: "Area", value: "A" },
   { label: "Perimeter", value: "P" },
 
-  // Statistics
+  // Statistics / Probability
   { label: "mean", value: "\\bar{x}" },
   { label: "variance", value: "σ^2" },
+  { label: "P(X)", value: "\\Pr(X)" },
+  { label: "E[X]", value: "\\mathbb{E}[X]" },
+  { label: "Var(X)", value: "\\mathrm{Var}(X)" },
+  { label: "Cov(X,Y)", value: "\\mathrm{Cov}(X,Y)" },
+
+  // Special Operators
+  { label: "⊕", value: "\\oplus" },
+  { label: "⊗", value: "\\otimes" },
+  { label: "⊖", value: "\\ominus" },
+  { label: "⨁", value: "\\bigoplus" },
+  { label: "⨂", value: "\\bigotimes" },
+
+  // Arrows
+  { label: "←", value: "\\leftarrow" },
+  { label: "→", value: "\\rightarrow" },
+  { label: "↑", value: "\\uparrow" },
+  { label: "↓", value: "\\downarrow" },
+  { label: "↔", value: "\\leftrightarrow" },
+  { label: "⇐", value: "\\Leftarrow" },
+  { label: "⇒", value: "\\Rightarrow" },
+  { label: "⇔", value: "\\Leftrightarrow" },
+
+  // Advanced Calculus
+  { label: "∇", value: "\\nabla" },
+  { label: "∮", value: "\\oint" },
+  { label: "∯", value: "\\oiint" },
 ];

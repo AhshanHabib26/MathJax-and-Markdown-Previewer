@@ -86,7 +86,7 @@ export default function MathToolbar({
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2 max-h-40 overflow-y-auto custom-scrollbar">
+      <div className="flex flex-wrap gap-2 max-h-30 overflow-y-auto custom-scrollbar">
         {filteredSymbols.map((sym) => (
           <Button
             key={sym.value}

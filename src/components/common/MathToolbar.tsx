@@ -68,7 +68,7 @@ export default function MathToolbar({
           placeholder="Search symbols..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="p-2 w-xs border rounded bg-gray-800 text-white border-dashed border-gray-500"
+          className="p-2 w-xs border rounded bg-gray-800 text-white border-gray-500"
         />
         <div className="flex gap-2">
           <Button

@@ -70,7 +70,7 @@ export default function MarkdownEditor({ value, onChange }: Props) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Write Markdown here... (Math uses $...$ / $$...$$)"
-        className="text-white p-4 h-[40vh] font-light border-dashed border-gray-500"
+        className="text-white p-4 min-h-72 font-light border-gray-500 overflow-y-auto custom-scrollbar"
         style={{ fontSize: "18px" }}
       />
     </div>

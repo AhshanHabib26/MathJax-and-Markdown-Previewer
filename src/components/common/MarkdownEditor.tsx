@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import MathToolbar from "./MathToolbar";
 
@@ -10,25 +10,61 @@ type Props = {
 export default function MarkdownEditor({ value, onChange }: Props) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const handleInsert = (symbol: string) => {
-    const textarea = textareaRef.current;
-    if (!textarea) return;
+  // Undo / Redo state
+  const [history, setHistory] = useState<string[]>([value]);
+  const [historyIndex, setHistoryIndex] = useState(0);
 
-    const start = textarea.selectionStart;
-    const end = textarea.selectionEnd;
-    const newValue = value.substring(0, start) + symbol + value.substring(end);
-    onChange(newValue);
+  // Add to history when value changes
+  useEffect(() => {
+    if (history[historyIndex] !== value) {
+      const updatedHistory = history.slice(0, historyIndex + 1);
+      updatedHistory.push(value);
+      setHistory(updatedHistory);
+      setHistoryIndex(updatedHistory.length - 1);
+    }
+  }, [value, history, historyIndex]);
 
-    const cursorPos = start + symbol.length;
-    setTimeout(() => {
-      textarea.selectionStart = textarea.selectionEnd = cursorPos;
-      textarea.focus();
-    }, 0);
-  };
+  const undo = useCallback(() => {
+    if (historyIndex > 0) {
+      const newIndex = historyIndex - 1;
+      setHistoryIndex(newIndex);
+      onChange(history[newIndex]);
+    }
+  }, [historyIndex, history, onChange]);
+
+  const redo = useCallback(() => {
+    if (historyIndex < history.length - 1) {
+      const newIndex = historyIndex + 1;
+      setHistoryIndex(newIndex);
+      onChange(history[newIndex]);
+    }
+  }, [historyIndex, history, onChange]);
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "z") {
+        e.preventDefault();
+        if (e.shiftKey) {
+          redo();
+        } else {
+          undo();
+        }
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [undo, redo]);
 
   return (
     <div>
-      <MathToolbar onInsert={handleInsert} />
+      <MathToolbar
+        textareaRef={textareaRef}
+        value={value}
+        onChange={onChange}
+        onUndo={undo}
+        onRedo={redo}
+      />
       <Textarea
         ref={textareaRef}
         value={value}

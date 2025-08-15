@@ -28,6 +28,37 @@ export const MATH_SYMBOLS = [
   { label: "√", value: "\\sqrt{}" },
   { label: "e^x", value: "e^{}" },
 
+  // Algebra
+  { label: "|x|", value: "\\lvert  \\rvert" },
+  { label: "x²", value: "x^{2}" },
+  { label: "x³", value: "x^{3}" },
+  { label: "xⁿ", value: "x^{n}" },
+  { label: "√x", value: "\\sqrt{x}" },
+
+  // Functions
+  { label: "f(x)", value: "f(x)" },
+
+  // Exponents & logarithms
+  { label: "log", value: "\\log" },
+  { label: "ln", value: "\\ln" },
+
+  // One-variable equations
+  { label: "ax+b=0", value: "ax+b=0" },
+
+  // Triangles & angles
+  { label: "sin", value: "\\sin" },
+  { label: "cos", value: "\\cos" },
+  { label: "tan", value: "\\tan" },
+
+  // Proportions & similarity
+  { label: "∼", value: "\\sim" },
+
+  // Two-variable linear equations
+  { label: "ax+by=c", value: "ax+by=c" },
+
+  // Finite sequences
+  { label: "a₁, a₂, ..., aₙ", value: "a_1, a_2, \\dots, a_n" },
+
   // Summation & product
   { label: "Σ", value: "\\sum" },
   { label: "∏", value: "\\prod" },
@@ -38,13 +69,6 @@ export const MATH_SYMBOLS = [
   { label: "∂", value: "\\partial" },
   { label: "d²/dx²", value: "\\frac{d^2}{dx^2}" },
   { label: "lim", value: "\\lim" },
-
-  // Algebra
-  { label: "|x|", value: "\\lvert  \\rvert" },
-  { label: "x²", value: "x^{2}" },
-  { label: "x³", value: "x^{3}" },
-  { label: "xⁿ", value: "x^{n}" },
-  { label: "√x", value: "\\sqrt{x}" },
 
   // Geometry
   { label: "∠", value: "\\angle" },
@@ -104,5 +128,20 @@ export const MATH_SYMBOLS = [
   { label: "Σ", value: "\\Sigma" },
   { label: "Φ", value: "\\Phi" },
   { label: "Ψ", value: "\\Psi" },
-  { label: "Ω", value: "\\Omega" }
+  { label: "Ω", value: "\\Omega" },
+
+  // Additional: Real numbers
+  { label: "ℝ", value: "\\mathbb{R}" },
+
+  // Circles & distance
+  { label: "radius r", value: "r" },
+  { label: "diameter d", value: "d" },
+
+  // Area & perimeter
+  { label: "Area", value: "A" },
+  { label: "Perimeter", value: "P" },
+
+  // Statistics
+  { label: "mean", value: "\\bar{x}" },
+  { label: "variance", value: "σ^2" },
 ];
